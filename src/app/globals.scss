@@ -1,0 +1,9 @@
+$primary-color: #1d231d;
+$gradient: linear-gradient(to right, #ababab, #626262);
+$btn_gradient: linear-gradient(to right, #2382b9, #9251d5);
+$header-height: 80px;
+
+@import "./style/Main";
+@import "./style/Header";
+@import "./style/Media";
+@import "./style/Scroll-to-Top";

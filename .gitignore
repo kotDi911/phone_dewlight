@@ -9,6 +9,10 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+/private
+/src/sitemap.xml
+/src/robots.txt
+/src/send_mail.php
 
 # testing
 /coverage
@@ -16,6 +20,8 @@
 # next.js
 /.next/
 /out/
+/secure
+/api
 
 # production
 /build
@@ -23,6 +29,12 @@
 # misc
 .DS_Store
 *.pem
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.idea
+db_config
 
 # debug
 npm-debug.log*
