@@ -12,11 +12,11 @@ export default function RootLayout({children,}: {
 }) {
     return (
         <html lang="en">
-        {/*<link*/}
-        {/*    rel="stylesheet"*/}
-        {/*    href="/phone_dewlight/globals.css"*/}
-        {/*    type="text/css"*/}
-        {/*/>*/}
+        <link
+            rel="stylesheet"
+            href="/phone_dewlight/globals.css"
+            type="text/css"
+        />
         <body>{children}</body>
         </html>
     )

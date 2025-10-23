@@ -26,9 +26,9 @@ export default function Order() {
 
         // 💡 Пример установки цены в зависимости от товара
         const productPrices: Record<string, number> = {
-            phone: 499.99,
-            laptop: 999.99,
-            watch: 199.99,
+            small: 100,
+            medium: 200,
+            large: 300,
         };
         const price = productPrices[formData.product] ?? 0;
 
@@ -55,7 +55,7 @@ export default function Order() {
         } catch (error: unknown) {
             if (error instanceof Error) {
                 console.error("Ошибка:", error.message);
-                alert("Произошла ошибка: " + error.message);
+                // alert("Произошла ошибка: " + error.message);
             } else {
                 console.error("Неизвестная ошибка:", error);
             }
@@ -64,113 +64,113 @@ export default function Order() {
 
     return (
         <section id="order" className="section order">
-            <div className="flex">
-                <div className="img-container">
-                    <Image
-                        src="/phone_dewlight/images/phone.jpg"
-                        alt="Phone Dewlight"
-                        width={300}
-                        height={600}
-                        className="main-img"
-                    />
-                </div>
-                <div className="w-60 ml-5">
-                    <div>
-                        <h2 className="h2">MAKE A BOOKING</h2>
-                        <p className="regular">Впустите Сияние Инноваций</p>
+            <div className="container">
+                <h2 className="h2">MAKE A BOOKING</h2>
+                <p className="regular">Впустите Сияние Инноваций</p>
+                <div className="form-container">
+                    <div className="img-container-order">
+                        <Image
+                            src="/phone_dewlight/images/phone.jpg"
+                            alt="Phone Dewlight"
+                            width={300}
+                            height={600}
+                            className="main-img-order"
+                        />
                     </div>
-                    <form className="w-full md:w-1/2 space-y-4 text-left" onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="product">Выберите товар:</label>
-                            <select
-                                id="product"
-                                name="product"
-                                value={formData.product}
-                                onChange={handleChange}
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            >
-                                <option value="">-- Выберите --</option>
-                                <option value="phone">Смартфон</option>
-                                <option value="laptop">Ноутбук</option>
-                                <option value="watch">Смарт-часы</option>
-                            </select>
-                        </div>
+                    <div className="w-60 ml-5">
+                        <form className="form flex column between" onSubmit={handleSubmit}>
+                            {/*<div className="flex column input-cont">*/}
+                            {/*    <label htmlFor="product" className="label">Change pack</label>*/}
+                            {/*    <select*/}
+                            {/*        id="product"*/}
+                            {/*        name="product"*/}
+                            {/*        value={formData.product}*/}
+                            {/*        onChange={handleChange}*/}
+                            {/*        className="input"*/}
+                            {/*        required*/}
+                            {/*    >*/}
+                            {/*        <option value="">-- Change pack --</option>*/}
+                            {/*        <option value="small">Small pack</option>*/}
+                            {/*        <option value="medium">Medium pack</option>*/}
+                            {/*        <option value="large">Big pack</option>*/}
+                            {/*    </select>*/}
+                            {/*</div>*/}
 
-                        <div>
-                            <label htmlFor="quantity">Количество:</label>
-                            <input
-                                type="number"
-                                id="quantity"
-                                name="quantity"
-                                min={1}
-                                value={formData.quantity}
-                                onChange={handleChange}
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            />
-                        </div>
+                            {/*<div className="flex column input-cont">*/}
+                            {/*    <label htmlFor="quantity" className="label">Quantity</label>*/}
+                            {/*    <input*/}
+                            {/*        type="number"*/}
+                            {/*        id="quantity"*/}
+                            {/*        name="quantity"*/}
+                            {/*        min={1}*/}
+                            {/*        value={formData.quantity}*/}
+                            {/*        onChange={handleChange}*/}
+                            {/*        className="input"*/}
+                            {/*        required*/}
+                            {/*    />*/}
+                            {/*</div>*/}
 
-                        <div>
-                            <label htmlFor="name">Имя:</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                placeholder="Имя"
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            />
-                        </div>
+                            <div className="flex column input-cont">
+                                <label htmlFor="name" className="label">Enter your name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    placeholder="Name"
+                                    className="input"
+                                    required
+                                />
+                            </div>
 
-                        <div>
-                            <label htmlFor="email">Email:</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                placeholder="Email"
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            />
-                        </div>
+                            <div className="flex column input-cont">
+                                <label htmlFor="email" className="label">Enter your email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    placeholder="Email"
+                                    className="input"
+                                    required
+                                />
+                            </div>
 
-                        <div>
-                            <label htmlFor="phone">Телефон:</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                placeholder="Телефон"
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            />
-                        </div>
+                            <div className="flex column input-cont">
+                                <label htmlFor="phone" className="label">Enter your phone number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    placeholder="Phone number"
+                                    className="input"
+                                    required
+                                />
+                            </div>
 
-                        <div>
-                            <label htmlFor="address">Адрес:</label>
-                            <input
-                                type="text"
-                                id="address"
-                                name="address"
-                                value={formData.address}
-                                onChange={handleChange}
-                                placeholder="Адрес доставки"
-                                className="w-full mt-1 p-2 border rounded"
-                                required
-                            />
-                        </div>
+                            <div className="flex column input-cont">
+                                <label htmlFor="address" className="label">Enter your address</label>
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    value={formData.address}
+                                    onChange={handleChange}
+                                    placeholder="Address"
+                                    className="input"
+                                    required
+                                />
+                            </div>
 
-                        <button type="submit" className="big-btn">
-                            submit
-                        </button>
-                    </form>
+                            <button type="submit" className="big-btn">
+                                submit
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

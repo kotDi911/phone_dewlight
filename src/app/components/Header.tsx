@@ -15,12 +15,12 @@ export default function Header() {
                         <Link href="#about" className="nav-link transition">
                             About
                         </Link>
-                        <Link
-                            href="#order"
-                            className="nav-link pre-order transition"
-                        >
-                            Pre-order
-                        </Link>
+                        {/*<Link*/}
+                        {/*    href="#order"*/}
+                        {/*    className="nav-link pre-order transition"*/}
+                        {/*>*/}
+                        {/*    Pre-order*/}
+                        {/*</Link>*/}
                     </nav>
                 </div>
             </header>
