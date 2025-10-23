@@ -52,9 +52,13 @@ export default function Order() {
             }
 
             alert("Заказ успешно оформлен!");
-        } catch (error: any) {
-            console.error("Ошибка:", error.message);
-            alert("Произошла ошибка: " + error.message);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error("Ошибка:", error.message);
+                alert("Произошла ошибка: " + error.message);
+            } else {
+                console.error("Неизвестная ошибка:", error);
+            }
         }
     };
 
